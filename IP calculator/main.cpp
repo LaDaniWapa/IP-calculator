@@ -8,6 +8,8 @@
  * File must contain one IP/mask (like the example avobe) per line.
  *
  * 
+ * [ mental note, compile with ==>   $ gcc main.cpp -o main -lstdc++ ]
+ * 
  * Made by Daniel @ Github :)
  * https://github.com/Chon33/IP-calculator
 */
@@ -172,7 +174,7 @@ void run_everything(string str = "") {
 
 	if (ip[4] == 32) {
 		change_output_color(Colors::Red);
-		cout << "Cannot use /32" << endl;
+		cout << "Cannot use /32 because thats a single host IP" << endl;
 		change_output_color(Colors::White);
 		return;
 	}
@@ -228,7 +230,7 @@ void ask_and_run() {
 
 int main() {
 	change_output_color(Colors::White);
-	SetConsoleTitleA("IP Calculator");
+	title("IP Calculator");
 
 	ask_and_run();
 

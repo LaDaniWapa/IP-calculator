@@ -24,14 +24,15 @@ void clear() {
 	system("cls");
 }
 
-
-void pause() {
-	change_output_color(Colors::White);
-	system("pause");
+void title(string title) {
+	SetConsoleTitleA(title);
 }
 
 #else
 #include <stdlib.h>
+#include <strings.h>
+
+using namespace std;
 
 enum class Colors {
 	Red = 31,
@@ -44,17 +45,16 @@ enum class Colors {
 };
 
 void change_output_color(Colors c) {
-	std::cout << ("\033[1;" + std::to_string((int)c) + "m");
+	cout << ("\033[1;" + to_string((int)c) + "m");
 } // \x1b or \033 ?
 
 void clear() {
 	system("clear");
 }
 
-void pause() {
-	change_output_color(Colors::White);
-	cout << "Press any key to continue . . ." << endl;
-	cin.get();
+void title(string title) {
+	string cmd = "echo '\\033]0;" + title + "\\a'";
+	system(cmd.c_str());
 }
 
 #endif
