@@ -10,8 +10,8 @@
  * 
  * [ mental note, compile with ==>   $ gcc main.cpp -o main -lstdc++ ]
  * 
- * Made by Daniel @ Github :)
- * https://github.com/Chon33/IP-calculator
+ * Made by LaDaniWapa @ Github :)
+ * https://github.com/LaDaniWapa/IP-calculator
 */
 
 #include <iostream>
